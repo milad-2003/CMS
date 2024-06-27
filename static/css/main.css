@@ -1,0 +1,32 @@
+body {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+
+.images-form {
+    margin: 60px 0 30px 0;
+    max-width: 200px;
+}
+
+.card {
+    background-color: #495057;
+    color: #f8f9fa;
+}
+
+.form-control, .btn {
+    background-color: #495057;
+    color: #f8f9fa;
+    border: 1px solid #6c757d;
+}
+
+.form-control:focus, .btn:focus {
+    background-color: #495057;
+    color: #f8f9fa;
+    border-color: #adb5bd;
+    box-shadow: none;
+}
+
+.dropdown-menu {
+    background-color: #495057;
+    color: #f8f9fa;
+}

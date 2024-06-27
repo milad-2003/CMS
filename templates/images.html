@@ -5,6 +5,33 @@
 {% endblock %}
 
 {% block body %}
-<h1>Images</h1>
+    <div class="container mt-5">
+        <h1 class="mb-4">Image Gallery</h1>
+        <form method="POST" action="/images" class="images-form">
+            <div class="form-group">
+                <label for="category">Filter by Category</label>
+                <select id="category" name="category" class="form-control" onchange="this.form.submit()">
+                    <option value="All" {{ 'selected' if selected_category == 'All' else '' }}>All</option>
+                    {% for category in categories %}
+                        <option value="{{ category }}" {{ 'selected' if selected_category == category else '' }}>{{ category }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </form>
+        <div class="row">
+            {% for image in images %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{{ image.image_path }}" class="card-img-top" alt="{{ image.description }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ image.title }}</h5>
+                            <p class="card-text">Category: {{ image.category }}</p>
+                            <p class="card-text">Photographer: {{ image.photographer.photographer_name }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
 
