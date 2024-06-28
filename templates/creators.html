@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Creators</title> 
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1 class="mb-4">Writers and Photographers</h1>
+        <h2>Photographers</h2>
+        <ul>
+            {% for photographer in photographers %}
+                <li><a class="creator-link" href="{{ url_for('photographer_detail', code=photographer.photographer_code) }}">{{ photographer.photographer_name }}</a></li>
+            {% endfor %}
+        </ul>
+        <h2>Writers</h2>
+        <ul>
+            {% for writer in writers %}
+                <li><a class="creator-link" href="{{ url_for('writer_detail', code=writer.writer_code) }}">{{ writer.writer_name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

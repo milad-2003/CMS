@@ -1,23 +1,15 @@
 {% extends "base.html" %}
 
 {% block head %}
-<title>Articles</title> 
+    <title>Writer details</title>
 {% endblock %}
 
 {% block body %}
     <div class="container mt-5">
-        <h1 class="mb-4">Articles</h1>
-        <form method="POST" action="/articles" class="filter-form">
-            <div class="form-group">
-                <label for="category">Filter by Category:</label>
-                <select class="form-control" id="category" name="category" onchange="this.form.submit()">
-                    <option value="All" {{ 'selected' if selected_category == 'All' else '' }}>All</option>
-                    {% for category in categories %}
-                        <option value="{{ category }}" {{ 'selected' if selected_category == category else '' }}>{{ category }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-        </form>
+        <h1 class="mb-4">{{ writer.writer_name }}</h1>
+        <h2>Writer Details</h2>
+        <p>Email: {{ writer.writer_email }}</p>
+        <h3>Articles</h3>
         <div class="row">
             {% for article in articles %}
                 <div class="col-md-4 mb-4">

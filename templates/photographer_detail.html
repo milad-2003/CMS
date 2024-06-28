@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Photographer details</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1 class="mb-4">{{ photographer.photographer_name  }}</h1>
+            <h2>Photographer Details</h2>
+            <p>Email: {{ photographer.photographer_email }}</p>
+            <h3>Images</h3>
+            <div class="row">
+                {% for image in images %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="{{ image.image_path }}" class="card-img-top" alt="{{ image.description }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ image.title }}</h5>
+                                <p class="card-text">Category: {{ image.category }}</p>
+                                <p class="card-text">Photographer: {{ image.photographer.photographer_name }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+    </div>
+{% endblock %}

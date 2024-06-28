@@ -7,7 +7,7 @@
 {% block body %}
     <div class="container mt-5">
         <h1 class="mb-4">Image Gallery</h1>
-        <form method="POST" action="/images" class="images-form">
+        <form method="POST" action="/images" class="filter-form">
             <div class="form-group">
                 <label for="category">Filter by Category</label>
                 <select id="category" name="category" class="form-control" onchange="this.form.submit()">

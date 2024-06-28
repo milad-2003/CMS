@@ -3,7 +3,7 @@ body {
     color: #f8f9fa;
 }
 
-.images-form {
+.filter-form {
     margin: 60px 0 30px 0;
     max-width: 200px;
 }
@@ -29,4 +29,12 @@ body {
 .dropdown-menu {
     background-color: #495057;
     color: #f8f9fa;
+}
+
+.creator-link {
+    color: #f8f9fa;
+}
+
+.creator-link:hover {
+    text-decoration: underline;
 }
